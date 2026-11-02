@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NovaStudio Autopost - Sign-in complete</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:2rem auto;padding:0 1rem}code{display:block;word-break:break-all;background:#f2f2f2;padding:.75rem;border-radius:6px}</style></head>
+<body>
+<h1>Sign-in complete</h1>
+<p id="msg">Copy the code below into the NovaStudio Autopost terminal.</p>
+<code id="code"></code>
+<script>
+const p=new URLSearchParams(location.search);
+if(p.get('error')){document.getElementById('msg').textContent='Sign-in failed: '+p.get('error')+' '+(p.get('error_description')||'');}
+document.getElementById('code').textContent=p.get('code')||'(no code in the address)';
+</script>
+</body></html>
